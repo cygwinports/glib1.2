@@ -1,0 +1,6 @@
+category: Devel
+requires: cygwin glib
+external-source: glib
+sdesc: "Gnome C function library (development)"
+ldesc: "GLib is a library which includes support routines for C such as 
+lists, trees, hashes, memory allocation, and many other things."
