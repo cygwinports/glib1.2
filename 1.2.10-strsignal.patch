@@ -1,0 +1,11 @@
+--- origsrc/glib-1.2.10/gstrfuncs.c	2008-07-03 10:44:27.156250000 -0500
++++ src/glib-1.2.10/gstrfuncs.c	2008-07-03 16:00:54.734375000 -0500
+@@ -702,7 +702,7 @@
+   char *msg;
+ 
+ #ifdef HAVE_STRSIGNAL
+-  extern char *strsignal (int sig);
++  extern const char *strsignal (int sig);
+   return strsignal (signum);
+ #elif NO_SYS_SIGLIST
+   switch (signum)

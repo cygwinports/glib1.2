@@ -1,5 +1,6 @@
-category: Libs
+category: Gnome Libs
 requires: cygwin
-sdesc: "Gnome C function library (runtime)"
+external-source: glib
+sdesc: "Gnome C function library (1.2 runtime)"
 ldesc: "GLib is a library which includes support routines for C such as 
 lists, trees, hashes, memory allocation, and many other things."

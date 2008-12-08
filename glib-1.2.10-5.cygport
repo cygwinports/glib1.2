@@ -6,13 +6,15 @@ PATCH_URI="
 	mirror://portage/dev-libs/${PN}/files/${P}-gcc34-fix.patch
 	mirror://portage/dev-libs/${PN}/files/${P}-m4.patch
 	mirror://gentoo/glib-1.2.10-r1-as-needed.patch.bz2
+	1.2.10-no-undefined.patch
+	1.2.10-gmodule-cygwin.patch
+	1.2.10-strsignal.patch
 "
 
-PKG_NAMES="${PN} ${PN}-devel"
-PKG_HINTS="setup devel"
-PKG_CONTENTS[0]="usr/bin/*.dll usr/share/doc/"
-PKG_CONTENTS[1]="--exclude=*.dll --exclude=doc etc/ usr/"
+PKG_NAMES="${PN} lib${PN}1.2_0 lib${PN}1.2-devel"
+libglib1_2_0_CONTENTS="usr/bin/*-1-2-0.dll usr/share/doc/"
+libglib1_2_devel_CONTENTS="--exclude=*.dll --exclude=doc usr/"
 
-CYGCONF_ARGS="--disable-static --with-threads=posix"
+CYGCONF_ARGS="--with-threads=posix"
 
 DISTCLEANFILES="acinclude.m4"
