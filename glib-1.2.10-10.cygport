@@ -8,7 +8,6 @@ PATCH_URI="
 	mirror://gentoo/glib-1.2.10-r1-as-needed.patch.bz2
 	1.2.10-no-undefined.patch
 	1.2.10-gmodule-cygwin.patch
-	1.2.10-strsignal.patch
 "
 
 PKG_NAMES="${PN} lib${PN}1.2_0 lib${PN}1.2-devel"

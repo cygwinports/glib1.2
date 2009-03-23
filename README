@@ -4,17 +4,18 @@ GLib is a library which includes support routines for C such as lists,
 trees, hashes, memory allocation, and many other things.
 
 Runtime requirements:
-  cygwin-1.5.25-15
+  cygwin-1.7.0-44
+  libgcc1-4.3.2-2
 
 Build requirements:
-  autoconf2.5-2.63-1
-  automake1.4-1.4p6-5
+  autoconf2.5-2.63-10
+  automake1.4-1.4p6-10
   binutils-20080624-2
-  gawk-3.1.6-1
-  gcc-core-3.3.3-3
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
   libtool-2.2.6a-1
-  make-3.81-1
-  sed-4.1.3-1
+  make-3.81-2
+  sed-4.1.5-2
 
 Canonical homepage:
   http://www.gtk.org/
@@ -44,12 +45,11 @@ Files included in the binary packages:
   /usr/bin/cygglib-1-2-0.dll
   /usr/bin/cyggmodule-1-2-0.dll
   /usr/bin/cyggthread-1-2-0.dll
-  /usr/share/doc/glib-1.2.10/AUTHORS
-  /usr/share/doc/glib-1.2.10/ChangeLog
-  /usr/share/doc/glib-1.2.10/COPYING
-  /usr/share/doc/glib-1.2.10/INSTALL
-  /usr/share/doc/glib-1.2.10/NEWS
-  /usr/share/doc/glib-1.2.10/README
+  /usr/share/doc/glib/AUTHORS
+  /usr/share/doc/glib/ChangeLog
+  /usr/share/doc/glib/COPYING
+  /usr/share/doc/glib/NEWS
+  /usr/share/doc/glib/README
 
 (libglib1.2-devel)
   /usr/bin/glib-config
@@ -76,21 +76,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 1.2.10-5 -----
-Rebuilt.
-
------ version 1.2.10-4 -----
-Rebuilt with Gentoo patches in -r5.
-Updated gmodule-cygwin.c to hybrid used in glib2.
-
------ version 1.2.10-3 -----
-Included code patches from the Cygnome project.
-
------ version 1.2.10-2 -----
-Patched glib.m4 for automake-1.8.
-
------ version 1.2.10-1 -----
-Initial release for Cygwin.
+----- version 1.2.10-10 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:

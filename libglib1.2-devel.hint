@@ -1,4 +1,4 @@
-category: Gnome Libs
+category: Gnome
 requires: cygwin libglib1.2_0
 external-source: glib
 sdesc: "Gnome C function library (1.2 development)"
