@@ -1,0 +1,23 @@
+--- origsrc/glib-1.2.10/glib.h	2001-02-26 21:44:38.000000000 -0600
++++ src/glib-1.2.10/glib.h	2009-03-23 09:05:15.703125000 -0500
+@@ -202,20 +202,11 @@ extern "C" {
+ #  endif
+ #endif
+ #ifndef G_INLINE_FUNC
+-#  ifdef __GNUC__
+-#    ifdef __OPTIMIZE__
+-#      define G_INLINE_FUNC extern inline
+-#    else
+-#      undef G_CAN_INLINE
+-#      define G_INLINE_FUNC extern
+-#    endif
+-#  else /* !__GNUC__ */
+ #    ifdef G_CAN_INLINE
+ #      define G_INLINE_FUNC static inline
+ #    else
+ #      define G_INLINE_FUNC extern
+ #    endif
+-#  endif /* !__GNUC__ */
+ #endif /* !G_INLINE_FUNC */
+ 
+ 
