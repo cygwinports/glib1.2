@@ -1,0 +1,33 @@
+NAME="glib1.2"
+VERSION=1.2.10
+RELEASE=12
+CATEGORY="Libs"
+SUMMARY="GNOME 1.x C function library"
+DESCRIPTION="GLib is a library which includes support routines for C such as
+lists, trees, hashes, memory allocation, and many other things."
+HOMEPAGE="http://www.gnome.org/"
+SRC_URI="mirror://gnome/sources/glib/${VERSION%.*}/glib-${VERSION}.tar.gz"
+SRC_DIR="glib-${VERSION}"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/glib.git/plain/glib-1.2.10-isowarning.patch
+	http://pkgs.fedoraproject.org/cgit/glib.git/plain/glib-1.2.10-gcc34.patch
+	http://pkgs.fedoraproject.org/cgit/glib.git/plain/glib-1.2.10-underquoted.patch
+	http://pkgs.fedoraproject.org/cgit/glib.git/plain/glib-1.2.10-no_undefined.patch
+	http://pkgs.fedoraproject.org/cgit/glib.git/plain/glib-1.2.10-unused-dep.patch
+	1.2.10-autoconf.patch
+	1.2.10-automake.patch
+	1.2.10-no-undefined.patch
+	1.2.10-gmodule-cygwin.patch
+	1.2.10-inline.patch
+"
+
+PKG_NAMES="libglib1.2_0 libglib1.2-devel"
+libglib1_2_0_CONTENTS="usr/bin/*-1-2-0.dll usr/share/doc/"
+libglib1_2_devel_CONTENTS="--exclude=*.dll --exclude=doc usr/"
+
+DISTCLEANFILES="acinclude.m4 gmodule/gmodule-cygwin.c"
+
+# for libtool 2.x
+WANT_AUTOMAKE=1.9
+
+CYGCONF_ARGS="--with-threads=posix"

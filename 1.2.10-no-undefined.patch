@@ -8,37 +8,20 @@
  	-export-dynamic
  
  noinst_PROGRAMS = testglib testgdate testgdateparser
---- origsrc/glib-1.2.10/gmodule/Makefile.am	2008-07-03 10:44:27.828125000 -0500
-+++ src/glib-1.2.10/gmodule/Makefile.am	2008-07-03 10:47:43.578125000 -0500
-@@ -26,18 +26,19 @@
- 	@G_MODULE_LDFLAGS@ \
- 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
- 	-release $(LT_RELEASE) \
-+	-no-undefined \
- 	-export-dynamic
- 
- libgmodule_la_LIBADD = @G_MODULE_LIBS@  $(libglib)
+--- origsrc/glib-1.2.10/gmodule/Makefile.am	2013-07-21 21:03:06.623129000 -0500
++++ src/glib-1.2.10/gmodule/Makefile.am	2013-07-21 21:08:33.432821400 -0500
+@@ -36,11 +36,11 @@ libgmodule_la_LIBADD = @G_MODULE_LIBS@ $
+ # problem with this ;(
  
  libgplugin_a_la_SOURCES = libgplugin_a.c
- libgplugin_a_la_DEPENDENCIES = libgmodule.la
 -libgplugin_a_la_LDFLAGS = @G_MODULE_LDFLAGS@ -avoid-version -module
+-libgplugin_a_la_LIBADD = @G_MODULE_LIBS@ $(libglib)
 +libgplugin_a_la_LDFLAGS = @G_MODULE_LDFLAGS@ -avoid-version -module -no-undefined
- libgplugin_a_la_LIBADD = @G_MODULE_LIBS@  $(libglib) libgmodule.la
++libgplugin_a_la_LIBADD = @G_MODULE_LIBS@ $(libglib) libgmodule.la
  
  libgplugin_b_la_SOURCES = libgplugin_b.c
- libgplugin_b_la_DEPENDENCIES = libgmodule.la
 -libgplugin_b_la_LDFLAGS = @G_MODULE_LDFLAGS@ -avoid-version -module
 +libgplugin_b_la_LDFLAGS = @G_MODULE_LDFLAGS@ -avoid-version -module -no-undefined
- libgplugin_b_la_LIBADD = @G_MODULE_LIBS@  $(libglib)
+ libgplugin_b_la_LIBADD = @G_MODULE_LIBS@ $(libglib)
  
  noinst_PROGRAMS = testgmodule
---- origsrc/glib-1.2.10/gthread/Makefile.am	2008-07-03 10:44:27.843750000 -0500
-+++ src/glib-1.2.10/gthread/Makefile.am	2008-07-03 10:47:49.578125000 -0500
-@@ -17,6 +17,7 @@
- libgthread_la_LDFLAGS = \
- 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
- 	-release $(LT_RELEASE) \
-+	-no-undefined \
- 	-export-dynamic
- 
- libgthread_la_LIBADD = @G_THREAD_LIBS@ $(libglib)

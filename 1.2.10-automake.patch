@@ -1,0 +1,22 @@
+--- origsrc/glib-1.2.10/Makefile.am	2013-07-21 21:03:07.231163800 -0500
++++ src/glib-1.2.10/Makefile.am	2013-07-21 21:04:30.071902000 -0500
+@@ -70,7 +70,7 @@ configinclude_DATA = \
+ 
+ CONFIGURE_DEPENDENCIES = acglib.m4		
+ 
+-BUILT_SOURCES = stamp-gc-h #note: not glibconfig.h
++BUILT_SOURCES += stamp-gc-h #note: not glibconfig.h
+ glibconfig.h: stamp-gc-h
+ 	@:
+ stamp-gc-h: config.status
+--- origsrc/glib-1.2.10/gmodule/Makefile.am	2013-07-21 21:03:06.623129000 -0500
++++ src/glib-1.2.10/gmodule/Makefile.am	2013-07-21 21:08:33.432821400 -0500
+@@ -44,7 +44,7 @@ libgmodule_la_LIBADD = @G_MODULE_LIBS@ $
+ libgplugin_b_la_LIBADD = @G_MODULE_LIBS@ $(libglib)
+ 
+ noinst_PROGRAMS = testgmodule
+-testgmodule_LDFLAGS += @G_MODULE_LDFLAGS@
++testgmodule_LDFLAGS = @G_MODULE_LDFLAGS@
+ testgmodule_LDADD = libgmodule.la @G_MODULE_LIBS@
+ 
+ .PHONY: files release
